@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace RestauranteIS
 {
-    public partial class Form1 : Form
+    public partial class TestManageIngreds : Form
     {
-        public Form1()
+        public TestManageIngreds()
         {
             InitializeComponent();
-            TestIngredientView tst = new TestIngredientView();
-            tst.Show();
         }
     }
 }
