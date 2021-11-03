@@ -36,6 +36,8 @@ namespace RestauranteIS
         }
         public void GridUpdate()
         {
+            dataGridView1.Rows.Clear();
+            dataGridView1.RowTemplate.Height = 60;
             dataGridView1.ColumnCount = 3;
             dataGridView1.Columns[0].Name = "Nro.";
             dataGridView1.Columns[1].Name = "Nombre";
@@ -47,6 +49,7 @@ namespace RestauranteIS
             dataGridView1.Columns.Add(imgn);
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
 
             foreach (Plato p in pedido)
             {
@@ -82,7 +85,13 @@ namespace RestauranteIS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == 4)
+            {
+                //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Plato plt = pedido.Find(x => x.GetNro().ToString() == dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                TestManageIngreds tmi = new TestManageIngreds(pedido.Find(x => x.GetNro() == (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value),this);
+                tmi.Show();
+            }
         }
     }
 }

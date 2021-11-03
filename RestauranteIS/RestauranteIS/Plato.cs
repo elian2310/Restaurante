@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestauranteIS
 {
-    class Plato
+    public class Plato
     {
         private int nro;
         private String nombre;
@@ -72,7 +72,7 @@ namespace RestauranteIS
         }
         public void AddExtra(Ingrediente extra)
         {
-            ingredientes.Add(extra);
+            extras.Add(extra);
         }
         public void DelIngrediente(String ingrediente)
         {
