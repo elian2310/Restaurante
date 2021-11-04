@@ -93,5 +93,11 @@ namespace RestauranteIS
                 tmi.Show();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VistaFactura fac = new VistaFactura(pedido, this);
+            fac.Show();
+        }
     }
 }

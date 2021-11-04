@@ -59,7 +59,7 @@
             this.tbdatosf.Location = new System.Drawing.Point(23, 155);
             this.tbdatosf.Multiline = true;
             this.tbdatosf.Name = "tbdatosf";
-            this.tbdatosf.Size = new System.Drawing.Size(300, 250);
+            this.tbdatosf.Size = new System.Drawing.Size(354, 250);
             this.tbdatosf.TabIndex = 2;
             // 
             // lblmet
@@ -77,8 +77,6 @@
             this.cbmet.ItemHeight = 24;
             this.cbmet.Items.AddRange(new object[] {
             "Efectivo",
-            "Codigo QR",
-            "NFC",
             "Transaccion"});
             this.cbmet.Location = new System.Drawing.Point(430, 155);
             this.cbmet.Name = "cbmet";

@@ -17,8 +17,7 @@ namespace RestauranteIS
             InitializeComponent();
             TestIngredientView tst = new TestIngredientView();
             tst.Show();
-            VistaFactura fac = new VistaFactura();
-            fac.Show();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
