@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestauranteIS
 {
-    class Ingrediente
+    public class Ingrediente
     {
         private String nombre;
         private int costoExtra;
@@ -45,6 +45,10 @@ namespace RestauranteIS
         public bool GetIncluido()
         {
             return incluido;
+        }
+        public void ToggleIncluido()
+        {
+            incluido = !incluido;
         }
     }
 }

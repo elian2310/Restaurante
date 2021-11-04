@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace RestauranteIS
 {
-    class Plato
+    public class Plato
     {
+        private int nro;
         private String nombre;
         private String imagen;
         private int costo;
@@ -21,6 +22,16 @@ namespace RestauranteIS
             this.costo = costo;
             this.ingredientes = new List<Ingrediente>();
             this.extras = new List<Ingrediente>();
+            this.nro = 0;
+        }
+        public Plato(String nombre, String imagen, int costo, int nro)
+        {
+            this.nombre = nombre;
+            this.imagen = imagen;
+            this.costo = costo;
+            this.ingredientes = new List<Ingrediente>();
+            this.extras = new List<Ingrediente>();
+            this.nro = nro;
         }
 
         public void SetNombre(String nombre)
@@ -61,7 +72,7 @@ namespace RestauranteIS
         }
         public void AddExtra(Ingrediente extra)
         {
-            ingredientes.Add(extra);
+            extras.Add(extra);
         }
         public void DelIngrediente(String ingrediente)
         {
@@ -78,6 +89,26 @@ namespace RestauranteIS
         public void SetIncludeExtra(String nombre, bool incluido)
         {
             extras.Find(x => x.GetNombre() == nombre).SetIncluido(incluido);
+        }
+        public void SetNro(int nro)
+        {
+            this.nro = nro;
+        }
+        public int GetNro()
+        {
+            return nro;
+        }
+        public int CalcularCosto()
+        {
+            int res = costo;
+            foreach (Ingrediente i in extras)
+            {
+                if (i.GetIncluido())
+                {
+                    res += i.GetCostoExtra();
+                }
+            }
+            return res;
         }
     }
 }
