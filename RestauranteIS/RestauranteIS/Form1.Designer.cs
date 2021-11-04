@@ -35,7 +35,7 @@ namespace RestauranteIS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(590, 229);
+            this.label1.Location = new System.Drawing.Point(360, 314);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 32);
             this.label1.TabIndex = 0;
