@@ -98,6 +98,7 @@ namespace RestauranteIS
         {
             VistaFactura fac = new VistaFactura(pedido, this);
             fac.Show();
+            this.Close();
         }
     }
 }

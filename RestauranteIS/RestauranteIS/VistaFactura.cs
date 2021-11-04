@@ -14,13 +14,13 @@ namespace RestauranteIS
     {
         private List<Plato> pedido;
         private TestIngredientView anterior;
-        private List<String> data;
+        private String[] data;
 
         public VistaFactura(List<Plato> pedido, TestIngredientView anterior)
         {
             this.pedido = pedido;
             this.anterior = anterior;
-            data = new List<String>();
+            data = new String[4];
             InitializeComponent();
             btnback.TileImage = Image.FromFile("..\\..\\img\\back.png");
             btnback.UseTileImage = true;
@@ -38,7 +38,9 @@ namespace RestauranteIS
         
         private void btnback_Click(object sender, EventArgs e)
         {
-            
+            TestIngredientView iv = new TestIngredientView();
+            iv.Show();
+            this.Close();
         }
 
         private void btnpagar_Click(object sender, EventArgs e)
@@ -47,19 +49,19 @@ namespace RestauranteIS
             if (metroTabControl1.SelectedTab.Text == "EFECTIVO")
             {
                 //txtBox de efectivo
-                data.Add(metroTabControl1.SelectedTab.Text);
-                data.Add(mTxtName1.Text);
-                data.Add(mTxtNIT.Text);
+                data[0] = (metroTabControl1.SelectedTab.Text);
+                data[1] = (mTxtName1.Text);
+                data[2] = (mTxtNIT.Text);
                 
 
             }
             else
             {
                 //txtBox de tarjeta
-                data.Add(metroTabControl1.SelectedTab.Text);
-                data.Add(mTxtName2.Text);
-                data.Add(mTxtTarjeta.Text);
-                data.Add(mTxtExp.Text);
+                data[0] = (metroTabControl1.SelectedTab.Text);
+                data[1] = (mTxtName2.Text);
+                data[2] = (mTxtTarjeta.Text);
+                data[3] = (mTxtExp.Text);
             }
             //OpenNewFormSending pedido and data
             Factura fac= new Factura(data, pedido);

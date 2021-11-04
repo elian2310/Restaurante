@@ -12,11 +12,11 @@ namespace RestauranteIS
 {
     public partial class Factura : MetroFramework.Forms.MetroForm
     {
-        private List<String> data;
+        private String[] data;
         private List<Plato> pedido;
         private int total;
 
-        public Factura(List<String> data, List<Plato> pedido)
+        public Factura(String[] data, List<Plato> pedido)
         {
             this.data = data;
             this.pedido = pedido;
@@ -28,6 +28,19 @@ namespace RestauranteIS
         {
             mLblPlatos.Text = "";
             mLblPrecios.Text = "";
+            if (data[0] == "TRANSACCION")
+            {
+                mLblNIT.Visible = false;
+                metroLabel11.Visible = false;
+            }
+            else
+            {
+                mLblNIT.Text = data[2];
+            }
+
+            mLblName.Text = data[1];
+            mLblPayment.Text = data[0];
+            mLblDate.Text = DateTime.Now.ToString("M/d/yyyy");
             foreach (Plato p in pedido)
             {
                 mLblPlatos.Text += p.GetNombre() + "\r\n";

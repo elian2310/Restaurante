@@ -37,6 +37,11 @@
             this.mLblPrecios = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.mLblName = new MetroFramework.Controls.MetroLabel();
+            this.mLblDate = new MetroFramework.Controls.MetroLabel();
+            this.mLblPayment = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.mLblNIT = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -120,11 +125,61 @@
             this.metroLabel7.TabIndex = 8;
             this.metroLabel7.Text = "mLblTot";
             // 
+            // mLblName
+            // 
+            this.mLblName.AutoSize = true;
+            this.mLblName.Location = new System.Drawing.Point(109, 77);
+            this.mLblName.Name = "mLblName";
+            this.mLblName.Size = new System.Drawing.Size(87, 20);
+            this.mLblName.TabIndex = 9;
+            this.mLblName.Text = "metroLabel8";
+            // 
+            // mLblDate
+            // 
+            this.mLblDate.AutoSize = true;
+            this.mLblDate.Location = new System.Drawing.Point(86, 98);
+            this.mLblDate.Name = "mLblDate";
+            this.mLblDate.Size = new System.Drawing.Size(87, 20);
+            this.mLblDate.TabIndex = 10;
+            this.mLblDate.Text = "metroLabel9";
+            // 
+            // mLblPayment
+            // 
+            this.mLblPayment.AutoSize = true;
+            this.mLblPayment.Location = new System.Drawing.Point(190, 118);
+            this.mLblPayment.Name = "mLblPayment";
+            this.mLblPayment.Size = new System.Drawing.Size(92, 20);
+            this.mLblPayment.TabIndex = 11;
+            this.mLblPayment.Text = "metroLabel10";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(275, 64);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(34, 20);
+            this.metroLabel11.TabIndex = 12;
+            this.metroLabel11.Text = "NIT:";
+            // 
+            // mLblNIT
+            // 
+            this.mLblNIT.AutoSize = true;
+            this.mLblNIT.Location = new System.Drawing.Point(307, 64);
+            this.mLblNIT.Name = "mLblNIT";
+            this.mLblNIT.Size = new System.Drawing.Size(92, 20);
+            this.mLblNIT.TabIndex = 13;
+            this.mLblNIT.Text = "metroLabel12";
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 593);
+            this.Controls.Add(this.mLblNIT);
+            this.Controls.Add(this.metroLabel11);
+            this.Controls.Add(this.mLblPayment);
+            this.Controls.Add(this.mLblDate);
+            this.Controls.Add(this.mLblName);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.mLblPrecios);
@@ -153,5 +208,10 @@
         private MetroFramework.Controls.MetroLabel mLblPrecios;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel mLblName;
+        private MetroFramework.Controls.MetroLabel mLblDate;
+        private MetroFramework.Controls.MetroLabel mLblPayment;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel mLblNIT;
     }
 }
