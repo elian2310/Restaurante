@@ -206,9 +206,11 @@ namespace RestauranteIS
             this.label2.TabIndex = 9;
             this.label2.Text = "Esta es una descripcion\r\nEsta es otra descipcion\r\nEsta es otra descripcion\r\n\r\n";
             // 
+            this.SuspendLayout();
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 625);
             this.Controls.Add(this.label2);
@@ -221,6 +223,7 @@ namespace RestauranteIS
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
