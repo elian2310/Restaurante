@@ -28,19 +28,12 @@ namespace RestauranteIS
         {
             mLblPlatos.Text = "";
             mLblPrecios.Text = "";
-            if (data[0] == "TRANSACCION")
-            {
-                mLblNIT.Visible = false;
-                metroLabel11.Visible = false;
-            }
-            else
-            {
-                mLblNIT.Text = data[2];
-            }
 
+            mLblNIT.Text = data[2];
             mLblName.Text = data[1];
             mLblPayment.Text = data[0];
             mLblDate.Text = DateTime.Now.ToString("M/d/yyyy");
+
             foreach (Plato p in pedido)
             {
                 mLblPlatos.Text += p.GetNombre() + "\r\n";

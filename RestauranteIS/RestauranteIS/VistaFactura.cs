@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace RestauranteIS
 {
@@ -20,7 +21,7 @@ namespace RestauranteIS
         {
             this.pedido = pedido;
             this.anterior = anterior;
-            data = new String[4];
+            data = new String[5];
             InitializeComponent();
             btnback.TileImage = Image.FromFile("..\\..\\img\\back.png");
             btnback.UseTileImage = true;
@@ -30,6 +31,11 @@ namespace RestauranteIS
         private void VistaFactura_Load(object sender, EventArgs e)
         {
             tbdatosf.Text = "Pedido: \r\n";
+            mTxtExp.ForeColor = Color.Black;
+            mTxtExp.Text = "mm/yy";
+           
+            /*teTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM/yyyy";*/
             foreach (Plato p in pedido)
             {
                 tbdatosf.Text += p.GetNombre() + "-----" + p.GetCosto() + "\r\n";
@@ -40,32 +46,52 @@ namespace RestauranteIS
         {
             TestIngredientView iv = new TestIngredientView();
             iv.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnpagar_Click(object sender, EventArgs e)
         {
-            
-            if (metroTabControl1.SelectedTab.Text == "EFECTIVO")
+            String pattern = @"^(0[1-9]|1[0-2])\/([2-9][1-9])";
+            bool isMatch = Regex.IsMatch(mTxtExp.Text, pattern);
+
+            String pattern2 = @"^[0-9]+";
+            bool isMatch2 = Regex.IsMatch(mTxtNIT.Text, pattern2);
+
+            bool isMatch3 = Regex.IsMatch(mTxtTarjeta.Text, pattern2);
+
+            if ((mTxtName1.Text.Length > 0) && isMatch2) //Nombre y Nit bien
             {
-                //txtBox de efectivo
+
                 data[0] = (metroTabControl1.SelectedTab.Text);
                 data[1] = (mTxtName1.Text);
                 data[2] = (mTxtNIT.Text);
-                
 
+                if (metroTabControl1.SelectedTab.Text == "TRANSACCION")
+                {
+                    //txtBox de TRANSACCION
+                    if (isMatch && isMatch3)
+                    {
+                        data[3] = (mTxtTarjeta.Text);
+                        data[4] = (mTxtExp.Text);
+                        Factura fac = new Factura(data, pedido);
+                        fac.Show();
+                    }
+                }
+                else
+                {
+                    Factura fac = new Factura(data, pedido);
+                    fac.Show();
+                }
+                
+                
             }
-            else
-            {
-                //txtBox de tarjeta
-                data[0] = (metroTabControl1.SelectedTab.Text);
-                data[1] = (mTxtName2.Text);
-                data[2] = (mTxtTarjeta.Text);
-                data[3] = (mTxtExp.Text);
-            }
-            //OpenNewFormSending pedido and data
-            Factura fac= new Factura(data, pedido);
-            fac.Show();
+            
+        }
+
+        private void mTxtExp_Enter(object sender, EventArgs e)
+        {
+            mTxtExp.Clear();
+            mTxtExp.ForeColor = Color.Black;
         }
     }
 }
