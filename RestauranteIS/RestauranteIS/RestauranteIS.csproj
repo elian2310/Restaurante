@@ -91,6 +91,12 @@
     <Compile Include="VistaFactura.Designer.cs">
       <DependentUpon>VistaFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaIngredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaIngredientes.designer.cs">
+      <DependentUpon>VistaIngredientes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VistaFactura.resx">
       <DependentUpon>VistaFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaIngredientes.resx">
+      <DependentUpon>VistaIngredientes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

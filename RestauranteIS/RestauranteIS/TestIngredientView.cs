@@ -88,9 +88,14 @@ namespace RestauranteIS
             if (e.ColumnIndex == 4)
             {
                 //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Plato plt = pedido.Find(x => x.GetNro().ToString() == dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                Plato plt = pedido.Find(x => x.GetNro().ToString() == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 TestManageIngreds tmi = new TestManageIngreds(pedido.Find(x => x.GetNro() == (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value),this);
                 tmi.Show();
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                pedido.Remove(pedido.Find(x => x.GetNro().ToString() == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                GridUpdate();
             }
         }
 

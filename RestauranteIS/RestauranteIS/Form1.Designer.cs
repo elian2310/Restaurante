@@ -29,6 +29,7 @@ namespace RestauranteIS
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -206,10 +207,25 @@ namespace RestauranteIS
             this.label2.TabIndex = 9;
             this.label2.Text = "Esta es una descripcion\r\nEsta es otra descipcion\r\nEsta es otra descripcion\r\n\r\n";
             // 
+=======
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(257, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+>>>>>>> parent of 065849f (Merge branch 'main' of https://github.com/elian2310/Restaurante)
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1152, 632);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -221,6 +237,11 @@ namespace RestauranteIS
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> parent of 065849f (Merge branch 'main' of https://github.com/elian2310/Restaurante)
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -236,6 +257,7 @@ namespace RestauranteIS
 
         #endregion
 
+<<<<<<< HEAD
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -252,6 +274,9 @@ namespace RestauranteIS
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+=======
+        private System.Windows.Forms.Button button1;
+>>>>>>> parent of 065849f (Merge branch 'main' of https://github.com/elian2310/Restaurante)
     }
 }
 
