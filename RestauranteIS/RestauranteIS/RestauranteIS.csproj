@@ -115,6 +115,9 @@
     <EmbeddedResource Include="TestIngredientView.resx">
       <DependentUpon>TestIngredientView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestManageIngreds.resx">
+      <DependentUpon>TestManageIngreds.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaFactura.resx">
       <DependentUpon>VistaFactura.cs</DependentUpon>
     </EmbeddedResource>

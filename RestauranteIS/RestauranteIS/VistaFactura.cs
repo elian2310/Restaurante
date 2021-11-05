@@ -14,10 +14,10 @@ namespace RestauranteIS
     public partial class VistaFactura : MetroFramework.Forms.MetroForm
     {
         private List<Plato> pedido;
-        private TestIngredientView anterior;
+        private VistaIngredientes anterior;
         private String[] data;
 
-        public VistaFactura(List<Plato> pedido, TestIngredientView anterior)
+        public VistaFactura(List<Plato> pedido, VistaIngredientes anterior)
         {
             this.pedido = pedido;
             this.anterior = anterior;
@@ -44,7 +44,7 @@ namespace RestauranteIS
         
         private void btnback_Click(object sender, EventArgs e)
         {
-            TestIngredientView iv = new TestIngredientView(pedido);
+            VistaIngredientes iv = new VistaIngredientes(pedido);
             iv.Show();
             this.Hide();
         }
@@ -92,6 +92,11 @@ namespace RestauranteIS
         {
             mTxtExp.Clear();
             mTxtExp.ForeColor = Color.Black;
+        }
+
+        private void tbdatosf_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

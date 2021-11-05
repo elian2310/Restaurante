@@ -13,8 +13,8 @@ namespace RestauranteIS
     public partial class TestManageIngreds : Form
     {
         private Plato dish;
-        private TestIngredientView anterior;
-        public TestManageIngreds(Plato dish, TestIngredientView anterior)
+        private VistaIngredientes anterior;
+        public TestManageIngreds(Plato dish, VistaIngredientes anterior)
         {
             InitializeComponent();
             this.dish = dish;
@@ -82,6 +82,11 @@ namespace RestauranteIS
 
 
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
