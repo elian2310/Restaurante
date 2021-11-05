@@ -16,5 +16,15 @@ namespace RestauranteIS
         {
             InitializeComponent();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }
