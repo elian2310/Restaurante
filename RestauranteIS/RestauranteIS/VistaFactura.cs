@@ -44,7 +44,7 @@ namespace RestauranteIS
         
         private void btnback_Click(object sender, EventArgs e)
         {
-            TestIngredientView iv = new TestIngredientView();
+            TestIngredientView iv = new TestIngredientView(pedido);
             iv.Show();
             this.Hide();
         }

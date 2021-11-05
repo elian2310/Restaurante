@@ -29,25 +29,20 @@ namespace RestauranteIS
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.mlblNombre = new System.Windows.Forms.Label();
+            this.mlblPrecio = new System.Windows.Forms.Label();
+            this.mlblCantidad = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,58 +51,16 @@ namespace RestauranteIS
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.flowLayoutPanel2.Controls.Add(this.button1);
-            this.flowLayoutPanel2.Controls.Add(this.button2);
-            this.flowLayoutPanel2.Controls.Add(this.button3);
-            this.flowLayoutPanel2.Controls.Add(this.button4);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 165);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(473, 457);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(470, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Categoria1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 46);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(470, 37);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Categoria2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(3, 89);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(470, 37);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Categoria3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(3, 132);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(470, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Categoria4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(482, 165);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -117,6 +70,7 @@ namespace RestauranteIS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -152,13 +106,6 @@ namespace RestauranteIS
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(959, 406);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 4;
-            // 
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
@@ -167,6 +114,7 @@ namespace RestauranteIS
             this.button5.Size = new System.Drawing.Size(42, 30);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -176,6 +124,7 @@ namespace RestauranteIS
             this.button6.Size = new System.Drawing.Size(42, 37);
             this.button6.TabIndex = 6;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -186,66 +135,65 @@ namespace RestauranteIS
             this.button7.TabIndex = 7;
             this.button7.Text = "Agregar";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label1
+            // mlblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(968, 211);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 52);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Esta es una descripcion\r\nEsta es otra descipcion\r\nEsta es otra descripcion\r\n\r\n";
+            this.mlblNombre.AutoSize = true;
+            this.mlblNombre.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mlblNombre.Location = new System.Drawing.Point(968, 211);
+            this.mlblNombre.Name = "mlblNombre";
+            this.mlblNombre.Size = new System.Drawing.Size(0, 13);
+            this.mlblNombre.TabIndex = 8;
             // 
-            // label2
+            // mlblPrecio
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(968, 282);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 52);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Esta es una descripcion\r\nEsta es otra descipcion\r\nEsta es otra descripcion\r\n\r\n";
+            this.mlblPrecio.AutoSize = true;
+            this.mlblPrecio.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mlblPrecio.Location = new System.Drawing.Point(968, 282);
+            this.mlblPrecio.Name = "mlblPrecio";
+            this.mlblPrecio.Size = new System.Drawing.Size(0, 13);
+            this.mlblPrecio.TabIndex = 9;
             // 
-=======
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            // mlblCantidad
+            // 
+            this.mlblCantidad.AutoSize = true;
+            this.mlblCantidad.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mlblCantidad.Location = new System.Drawing.Point(1022, 401);
+            this.mlblCantidad.Name = "mlblCantidad";
+            this.mlblCantidad.Size = new System.Drawing.Size(13, 13);
+            this.mlblCantidad.TabIndex = 10;
+            this.mlblCantidad.Text = "0";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(257, 150);
+            this.button1.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(994, 51);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 30);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Siguiente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
->>>>>>> parent of 065849f (Merge branch 'main' of https://github.com/elian2310/Restaurante)
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1152, 632);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1136, 632);
+            this.Controls.Add(this.mlblCantidad);
+            this.Controls.Add(this.mlblPrecio);
+            this.Controls.Add(this.mlblNombre);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Margin = new System.Windows.Forms.Padding(2);
-=======
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
->>>>>>> parent of 065849f (Merge branch 'main' of https://github.com/elian2310/Restaurante)
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -257,26 +205,20 @@ namespace RestauranteIS
 
         #endregion
 
-<<<<<<< HEAD
+
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-=======
+        private System.Windows.Forms.Label mlblNombre;
+        private System.Windows.Forms.Label mlblPrecio;
+        private System.Windows.Forms.Label mlblCantidad;
         private System.Windows.Forms.Button button1;
->>>>>>> parent of 065849f (Merge branch 'main' of https://github.com/elian2310/Restaurante)
     }
 }
 

@@ -18,6 +18,12 @@ namespace RestauranteIS
             this.imagen = imagen;
             this.platos = new List<Plato>();
         }
+        public Categoría(String nombre)
+        {
+            this.nombre = nombre;
+            this.platos = new List<Plato>();
+
+        }
 
         public void SetNombre(String nombre)
         {
@@ -34,6 +40,10 @@ namespace RestauranteIS
         public String GetImagen()
         {
             return imagen;
+        }
+        public List<Plato> getPlatos()
+        {
+            return platos;
         }
         public void AddPlato(Plato plato)
         {

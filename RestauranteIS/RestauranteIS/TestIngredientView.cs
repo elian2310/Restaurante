@@ -15,18 +15,11 @@ namespace RestauranteIS
     public partial class TestIngredientView : Form
     {
         private List<Plato> pedido;
-        public TestIngredientView()
+        public TestIngredientView(List<Plato> pedido)
         {
             InitializeComponent();
-            this.pedido = new List<Plato>();
-            pedido.Add(new Plato("Hamburguesa", "..\\..\\img\\hamburg.png", 20, 1));
-            pedido.Add(new Plato("Jugo de Frutas", "..\\..\\img\\jugof.jpg", 5, 2));
-            pedido[0].AddIngrediente(new Ingrediente("Queso", 2, false));
-            pedido[0].AddIngrediente(new Ingrediente("Cebolla", 2, false));
-            pedido[0].AddIngrediente(new Ingrediente("Tomate", 2, false));
-            pedido[0].AddExtra(new Ingrediente("Doble queso", 5, true));
-            pedido[0].AddExtra(new Ingrediente("Llajua", 3, true));
-            pedido[1].AddExtra(new Ingrediente("Hielo", 1, true));
+            this.pedido = pedido;
+           
 
         }
 
