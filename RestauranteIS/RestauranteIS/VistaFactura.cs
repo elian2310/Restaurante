@@ -25,6 +25,7 @@ namespace RestauranteIS
             InitializeComponent();
             btnback.TileImage = Image.FromFile("..\\..\\img\\back.png");
             btnback.UseTileImage = true;
+            pictureBox1.Image = Image.FromFile("..\\..\\img\\circulos.PNG");
             
         }
 
@@ -38,14 +39,13 @@ namespace RestauranteIS
             dateTimePicker1.CustomFormat = "MM/yyyy";*/
             foreach (Plato p in pedido)
             {
-                tbdatosf.Text += p.GetNombre() + "-----" + p.GetCosto() + "\r\n";
+                tbdatosf.Text += p.GetNombre() + "-----" + p.CalcularCosto() + "\r\n";
             }
         }
         
         private void btnback_Click(object sender, EventArgs e)
         {
-            VistaIngredientes iv = new VistaIngredientes(pedido);
-            iv.Show();
+            anterior.Show();
             this.Hide();
         }
 

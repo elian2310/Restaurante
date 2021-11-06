@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
 using System.IO;
 
 namespace RestauranteIS
@@ -15,47 +14,35 @@ namespace RestauranteIS
     public partial class VistaIngredientes : MetroFramework.Forms.MetroForm
     {
         private List<Plato> pedido;
-        public VistaIngredientes(List<Plato> pedido)
+        private Form1 anterior;
+        private VistaFactura siguiente;
+        public VistaIngredientes(List<Plato> pedido, Form1 anterior)
         {
             InitializeComponent();
+            pictureBox1.Image = Image.FromFile("..\\..\\img\\circulos.PNG");
             this.pedido = pedido;
+            this.anterior = anterior;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-        private void dgv_ingredientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void VistaIngredientes_Load(object sender, EventArgs e)
         {
             GridUpdate();
         }
-
         public void GridUpdate()
         {
-            dgv_ingredientes.Rows.Clear();
-            dgv_ingredientes.RowTemplate.Height = 60;
-            dgv_ingredientes.ColumnCount = 3;
-            dgv_ingredientes.Columns[0].Name = "Nro.";
-            dgv_ingredientes.Columns[1].Name = "Nombre";
-            dgv_ingredientes.Columns[2].Name = "Subtotal";
+            dataGridView1.Rows.Clear();
+            dataGridView1.RowTemplate.Height = 60;
+            dataGridView1.ColumnCount = 3;
+            dataGridView1.Columns[0].Name = "Nro.";
+            dataGridView1.Columns[1].Name = "Nombre";
+            dataGridView1.Columns[2].Name = "Subtotal";
             DataGridViewImageColumn imgn = new DataGridViewImageColumn();
             imgn.HeaderText = "Imagen";
             imgn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             imgn.Name = "colImgn";
-            dgv_ingredientes.Columns.Add(imgn);
-            dgv_ingredientes.AllowUserToAddRows = false;
-            dgv_ingredientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns.Add(imgn);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
 
             foreach (Plato p in pedido)
@@ -69,7 +56,7 @@ namespace RestauranteIS
                 Image nimg = Image.FromFile(p.GetImagen());
                 nimg.Save(ms, nimg.RawFormat);
                 byte[] bimg = ms.ToArray();
-                dgv_ingredientes.Rows.Add(p.GetNro(), p.GetNombre(), p.CalcularCosto(), bimg);
+                dataGridView1.Rows.Add(p.GetNro(), p.GetNombre(), p.CalcularCosto(), bimg);
             }
 
             DataGridViewButtonColumn ingr = new DataGridViewButtonColumn();
@@ -86,31 +73,40 @@ namespace RestauranteIS
             ingr.UseColumnTextForButtonValue = true;
             descartar.UseColumnTextForButtonValue = true;
 
-            dgv_ingredientes.Columns.Add(ingr);
-            dgv_ingredientes.Columns.Add(descartar);
+            dataGridView1.Columns.Add(ingr);
+            dataGridView1.Columns.Add(descartar);
         }
 
-        private void dgv_ingredientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
             {
-                //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Plato plt = pedido.Find(x => x.GetNro().ToString() == dgv_ingredientes.Rows[e.RowIndex].Cells[0].Value.ToString());
-                TestManageIngreds tmi = new TestManageIngreds(pedido.Find(x => x.GetNro() == (int)dgv_ingredientes.Rows[e.RowIndex].Cells[0].Value), this);
+                ////MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Plato plt = pedido.Find(x => x.GetNro().ToString() == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                TestManageIngreds tmi = new TestManageIngreds(pedido.Find(x => x.GetNro() == (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value), this);
                 tmi.Show();
             }
             else if (e.ColumnIndex == 5)
             {
-                pedido.Remove(pedido.Find(x => x.GetNro().ToString() == dgv_ingredientes.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                pedido.Remove(pedido.Find(x => x.GetNro().ToString() == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 GridUpdate();
             }
         }
 
-        private void btn_siguiente_ing_Click(object sender, EventArgs e)
+        private void btnback_Click(object sender, EventArgs e)
         {
-            VistaFactura fac = new VistaFactura(pedido, this);
-            fac.Show();
-            this.Close();
+            this.Hide();
+            anterior.Show();
+        }
+
+        private void btnnext_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (siguiente == null)
+            {
+                siguiente = new VistaFactura(pedido, this);
+            }
+            siguiente.Show();
         }
     }
 }

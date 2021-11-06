@@ -37,8 +37,8 @@ namespace RestauranteIS
             foreach (Plato p in pedido)
             {
                 mLblPlatos.Text += p.GetNombre() + "\r\n";
-                mLblPrecios.Text += p.GetCosto() + "\r\n";
-                total += p.GetCosto();
+                mLblPrecios.Text += p.CalcularCosto() + "\r\n";
+                total += p.CalcularCosto();
             }
             metroLabel7.Text = total.ToString();
         }

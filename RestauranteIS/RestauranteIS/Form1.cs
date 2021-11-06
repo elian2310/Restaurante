@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace RestauranteIS
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         Ingrediente papa;
         Ingrediente ensalada;
@@ -42,13 +42,15 @@ namespace RestauranteIS
         List<Categoría> categorias;
         List<Plato> platos;
 
-        TestIngredientView ts;
+        VistaIngredientes ts;
+        VistaFactura fact;
 
         int cantidad;
         string platoSeleccionado;
         public Form1()
         {
             InitializeComponent();
+
             papa = new Ingrediente("Papa", 5, true);
             ensalada = new Ingrediente("Ensalada", 5, true);
             pan = new Ingrediente("Pan", 5, true);
@@ -90,6 +92,7 @@ namespace RestauranteIS
             silpancho = new Plato("Silpancho", "..\\..\\img\\silpancho.jpg", 15);
             silpancho.AddIngrediente(papa);
             silpancho.AddIngrediente(ensalada);
+            silpancho.AddExtra(yuca);
             return silpancho;
         }
         private Plato crearHamburguesa()
@@ -98,6 +101,7 @@ namespace RestauranteIS
             hamburguesa.AddIngrediente(pan);
             hamburguesa.AddIngrediente(lechuga);
             hamburguesa.AddIngrediente(tomate);
+            hamburguesa.AddExtra(papas);
             return hamburguesa;
         }
 
@@ -111,39 +115,43 @@ namespace RestauranteIS
         private Plato crearCanela()
         {
             canela = new Plato("Canela", "..\\..\\img\\canela.jpg", 7);
-            canela.AddIngrediente(agua);
+            canela.AddExtra(crema);
             return canela;
         }
 
         private Plato crearLimon()
         {
             limon = new Plato("Limon", "..\\..\\img\\limon.jpg", 7);
-            limon.AddIngrediente(crema);
+            limon.AddExtra(crema);
             return limon;
         }
 
         private Plato crearVainilla()
         {
             vainilla = new Plato("Vainilla", "..\\..\\img\\vainilla.png", 7);
-            vainilla.AddIngrediente(crema);
+            vainilla.AddExtra(crema);
+            vainilla.AddExtra(chispasDeChocolate);
             return vainilla;
         }
 
         private Plato crearMoconchinchi()
         {
             moconchinchi = new Plato("Moconchinchi", "..\\..\\img\\moconchinchi.jpg", 5);
+            moconchinchi.AddExtra(hielo);
             return moconchinchi;
         }
 
         private Plato crearLimonada()
         {
             limonada = new Plato("Limonada", "..\\..\\img\\limonada.jpg", 5);
+            limonada.AddExtra(hielo);
             return limonada;
         }
 
         private Plato crearSoda()
         {
             soda = new Plato("Soda", "..\\..\\img\\sodas.jpg", 5);
+            soda.AddExtra(hielo);
             return soda;
         }
 
@@ -344,7 +352,10 @@ namespace RestauranteIS
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ts = new TestIngredientView(platos);
+            
+            
+            ts = new VistaIngredientes(platos,this);
+            
             ts.Show();
         }
     }

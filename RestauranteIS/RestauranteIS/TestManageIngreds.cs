@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace RestauranteIS
 {
-    public partial class TestManageIngreds : Form
+    public partial class TestManageIngreds : MetroFramework.Forms.MetroForm
     {
         private Plato dish;
         private VistaIngredientes anterior;
